@@ -4,16 +4,16 @@ A basic service which gets movie details from imdb through 3rd API party intergr
 ### Clone or Download
 
 you can directly download zip file or you can clone this repo.
-for clone the repo, make sure you installed gitbash on your system and then follow below commands
+for clone the repo, make sure you installed git bash on your system and then follow below commands
 
 ```sh
-$ git clone https://github.com/utsavgadhiya/what-s-the-weather.git
+$ git clone https://github.com/utsavgadhiya/imdb-movie-service.git
 ```
 
 ### Setup virtual environment 
 
 ```sh
-$ cd what-s-the-weather
+$ cd imdb-movie-service
 $ virtualenv venv
 $ cd venv/Scripts
 $ activate
