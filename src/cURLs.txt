@@ -1,0 +1,24 @@
+curl --location --request GET 'localhost:5000/api/movie/search?q=justice'
+
+curl --location --request POST 'localhost:5000/api/movie/get/details' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "title_codes": [
+        "tt12361974",
+        "tt5034838",
+        "tt0974015",
+        "tt6334354",
+        "tt0293429",
+        "tt7888964",
+        "tt5109280",
+        "tt2975590",
+        "tt7126948",
+        "tt4154796"
+    ]
+}'
+
+curl --location --request GET 'localhost:5000/api/movie/search/bygenre?genre=fantacy'
+
+curl --location --request GET 'localhost:5000/api/movie/get/top-rated-movies'
+
+curl --location --request GET 'localhost:5000/api/movie/get/top-rated-tv-shows'
