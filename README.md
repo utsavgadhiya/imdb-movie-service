@@ -20,7 +20,7 @@ $ activate
 $ cd ../..
 ```
 
-### Install require dependencies 
+### Install required dependencies 
 
 ```sh
 $ pip install -r requirements.txt
