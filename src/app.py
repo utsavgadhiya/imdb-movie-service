@@ -4,7 +4,7 @@ from flask import Flask, jsonify, request
 from waitress import serve
 import requests
 import json
-from config import secret
+from config import key, port
 
 app = Flask(__name__)
 
@@ -25,7 +25,7 @@ def search_movie():
     url = 'https://imdb8.p.rapidapi.com/auto-complete'
     querystring = {'q': request.args.get('q')}
     headers = {
-        'x-rapidapi-key': secret['key'],
+        'x-rapidapi-key': key,
         'x-rapidapi-host': 'imdb8.p.rapidapi.com'
     }
     response = requests.get(url=url, headers=headers, params=querystring)
@@ -45,7 +45,7 @@ def search_movie_by_genre():
     url = 'https://imdb8.p.rapidapi.com/title/get-popular-movies-by-genre'
     querystring = {'genre': request.args.get('genre')}
     headers = {
-        'x-rapidapi-key': secret['key'],
+        'x-rapidapi-key': key,
         'x-rapidapi-host': 'imdb8.p.rapidapi.com'
     }
     response = requests.get(url=url, headers=headers, params=querystring)
@@ -69,7 +69,7 @@ def get_movie_details():
     final_response = []
     url = 'https://imdb8.p.rapidapi.com/title/get-details'
     headers = {
-        'x-rapidapi-key': secret['key'],
+        'x-rapidapi-key': key,
         'x-rapidapi-host': 'imdb8.p.rapidapi.com'
     }
     for title in body:
@@ -91,7 +91,7 @@ def get_top_rated_movies():
     '''
     url = 'https://imdb8.p.rapidapi.com/title/get-top-rated-movies'
     headers = {
-        'x-rapidapi-key': secret['key'],
+        'x-rapidapi-key': key,
         'x-rapidapi-host': 'imdb8.p.rapidapi.com'
     }
     response = requests.get(url=url, headers=headers)
@@ -110,7 +110,7 @@ def get_top_rated_tv_shows():
     '''
     url = 'https://imdb8.p.rapidapi.com/title/get-top-rated-tv-shows'
     headers = {
-        'x-rapidapi-key': secret['key'],
+        'x-rapidapi-key': key,
         'x-rapidapi-host': 'imdb8.p.rapidapi.com'
     }
     response = requests.get(url=url, headers=headers)
@@ -124,4 +124,4 @@ def get_top_rated_tv_shows():
 
 # __main__
 if __name__ == '__main__':
-    serve(app, port=5000)
+    serve(app, port)
