@@ -1,4 +1,4 @@
 # config file
 
-key = 'add-your-API-key-here',
+key = 'add-your-API-key-here'
 port = 5000
